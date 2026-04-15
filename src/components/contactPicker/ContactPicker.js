@@ -1,11 +1,15 @@
 import React from "react";
 
-export const ContactPicker = ({ contactsArray, onChange, value, name }) => {
+export const ContactPicker = ({ contactsArray, onChange, value, name, id }) => {
   return (
-    <select onChange={onChange} value={value} name={name}>
-      <option value="" default>
-        No Contact Selected
-      </option>
+    <select
+      id={id}
+      name={name}
+      className="form-select"
+      onChange={onChange}
+      value={value}
+    >
+      <option value="">No contact selected</option>
       {contactsArray.map((contact, index) => {
         return (
           <option key={index} value={contact.name}>

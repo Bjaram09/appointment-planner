@@ -31,8 +31,8 @@ export const AppointmentsPage = ({
   };
 
   return (
-    <div>
-      <section>
+    <div className="page-content">
+      <section className="section-card">
         <h2>Add Appointment</h2>
         <AppointmentForm
           title={title}
@@ -46,11 +46,15 @@ export const AppointmentsPage = ({
           handleSubmit={handleSubmit}
         />
       </section>
-      <hr />
-      <section>
-        <h2>Appointments</h2>
-        <TileList data={appointmentsArray} />
-      </section>
+      {appointmentsArray.length > 0 && (
+        <>
+          <hr />
+          <section className="section-card">
+            <h2>Appointments</h2>
+            <TileList data={appointmentsArray} />
+          </section>
+        </>
+      )}
     </div>
   );
 };
