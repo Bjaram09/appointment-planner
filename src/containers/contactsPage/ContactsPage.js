@@ -47,8 +47,8 @@ export const ContactsPage = ({ contactsArray, addNewContact }) => {
   }, [name, contactsArray]);
 
   return (
-    <div>
-      <section>
+    <div className="page-content">
+      <section className="section-card">
         <h2>Add Contact</h2>
         <ContactForm
           name={name}
@@ -60,11 +60,15 @@ export const ContactsPage = ({ contactsArray, addNewContact }) => {
           handleSubmit={handleSubmit}
         />
       </section>
-      <hr />
-      <section>
-        <h2>Contacts</h2>
-        <TileList data={contactsArray} />
-      </section>
+      {contactsArray.length > 0 && (
+        <>
+          <hr />
+          <section className="section-card">
+            <h2>Contacts</h2>
+            <TileList data={contactsArray} />
+          </section>
+        </>
+      )}
     </div>
   );
 };

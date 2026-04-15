@@ -19,34 +19,51 @@ export const AppointmentForm = ({
   handleSubmit,
 }) => {
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="title">Title</label>
-      <input
-        type="text"
-        id="title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <ContactPicker
-        contactsArray={contactsArray}
-        onChange={(e) => setContact(e.target.value)}
-      />
-      <label htmlFor="date">Date</label>
-      <input
-        type="date"
-        id="date"
-        value={date}
-        onChange={(e) => setDate(e.target.value)}
-      />
-      <label htmlFor="time">Time</label>
-      <input
-        type="time"
-        id="time"
-        value={time}
-        min={getTodayString()}
-        onChange={(e) => setTime(e.target.value)}
-      />
-      <button type="submit">Submit</button>
+    <form onSubmit={handleSubmit} className="form-layout">
+      <div className="form-row">
+        <label htmlFor="title">Title</label>
+        <input
+          className="form-input"
+          type="text"
+          id="title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+      </div>
+      <div className="form-row">
+        <label htmlFor="contact">Contact</label>
+        <ContactPicker
+          id="contact"
+          name="contact"
+          value={contact}
+          contactsArray={contactsArray}
+          onChange={(e) => setContact(e.target.value)}
+        />
+      </div>
+      <div className="form-row">
+        <label htmlFor="date">Date</label>
+        <input
+          className="form-input"
+          type="date"
+          id="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+        />
+      </div>
+      <div className="form-row">
+        <label htmlFor="time">Time</label>
+        <input
+          className="form-input"
+          type="time"
+          id="time"
+          value={time}
+          min={getTodayString()}
+          onChange={(e) => setTime(e.target.value)}
+        />
+      </div>
+      <button type="submit" className="primary-button">
+        Submit
+      </button>
     </form>
   );
 };
