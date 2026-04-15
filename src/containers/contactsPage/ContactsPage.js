@@ -21,6 +21,7 @@ export const ContactsPage = ({ contactsArray, addNewContact }) => {
     if the contact name is not a duplicate
     */
     if (!duplicate) {
+      console.log(name, phone, email);
       addNewContact(name, phone, email);
       setName("");
       setPhone("");

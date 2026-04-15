@@ -24,10 +24,11 @@ function App() {
   */
 
   const addNewContact = (name, phone, email) => {
+    console.log(name, phone, email);
     const newContact = {
-      name: name,
-      phone: phone,
-      email: email,
+      name,
+      phone,
+      email,
     };
 
     setContacts((prev) => [...prev, newContact]);
@@ -35,10 +36,10 @@ function App() {
 
   const addNewAppointment = (name, contact, date, time) => {
     const newAppointment = {
-      name: name,
-      contact: contact,
-      date: date,
-      time: time,
+      name,
+      contact,
+      date,
+      time,
     };
 
     setAppoinments((prev) => [...prev, newAppointment]);
